@@ -1,3 +1,12 @@
+# PRDgen: the Primary Radiation Damage structure generator
+PRDgen is a tool that generates realistic defect structures based on PKA energy and direction.
+It utilizes Gaussian Process Regression (GPR) and Convolutional Neural Network (CNN)
+Machine A utilize GPR to generate quasi-random defect structure
+Machine B utilize CNN to classify whether the defect structure is realistic or not.
+PRDgen make iteration between Machine A and B to find reasonable defect structure from certain PKA energy and direction.
+The deep description about PRDgen is presented in: JongHyeon Park, Takuji Oda, "Generation of radiation damage structures in bcc-W using machine-learning statistical and image recognition models trained on molecular dynamics", journal of ...
+
+
 # Machine A
 There are four files to operate Machine A.
 (1) func_def_gen6.c
@@ -15,8 +24,17 @@ There are four files to operate Machine A.
 - Receives project name, PKA energy, direction, seed, and defect number, and output is a defect structure
 - It is utilized to generate quasi-random structure
 
-# Machine B
+## How to use Machine A
+1. Compile MachineA_numonly.c and MachineA_configonly.c, respectively. We highly recommend you to name 'def_number.exe' and 'def_config.exe', respectively.
+2. You can generate a possible defect number, with PKA energy, direction, and random seed. The result is saved in 'defnum.dat' file.
+./def_number.exe 30.0 0.8 0.4 0.2 297297
+3. Next, you cen create quasi-random structure, with project name, PKA energy, direction, random seed, and defect number.
+./def_config.exe output 30.0 0.8 0.4 0.2 972972 50 > output.dat
 
+# Machine B
+- This Python script implements a convolutional neural network (CNN) using Keras to classify 3D defect projection data into two categories
+
+# PRDgen
 
 
 Supporting files to run PRDgen
