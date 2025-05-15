@@ -35,10 +35,21 @@ There are four files to operate Machine A.
 - This Python script implements a convolutional neural network (CNN) using Keras to classify 3D defect projection data into two categories
 
 # PRDgen
+PRDgen code connect Machine A and B to create realistic defect structure.
 
 
-Supporting files to run PRDgen
+## How to use PRDgen
+1. You need to first compile a Machine A. (making def_number.exe and def_config.exe)
+2. And also, you need two folders: 'alldat-files' and 'limit-files'
+3. Then, run the code with desired PKA energy and direction, like:
+  python PRDgen.py 30.0 0.5 -0.3 0.9
+4. wait a moment, and check the calculation result, and 'primary_damage_structure.dat' file.
+
+
+# Required files to run PRDgen
+All necessary files are shared by Google Drive : https://drive.google.com/drive/folders/14lEF71SVgWBGjOkYrd1lxf828RhxAkVv?usp=sharing
 /alldat-files : probability density files to make quasi-random structure by Machine A
 /limit-files : highest/lowest values of defect number and defect position at certain PKA energy.
+/Final_machine_211109_3.h5 : trained CNN model (result of Machine B)
 
-https://drive.google.com/drive/folders/14lEF71SVgWBGjOkYrd1lxf828RhxAkVv?usp=sharing
+
