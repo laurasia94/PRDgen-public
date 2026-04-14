@@ -45,6 +45,9 @@ PRDgen code connect Machine A and B to create realistic defect structure.
   python PRDgen.py 30.0 0.5 -0.3 0.9
 4. wait a moment, and check the calculation result, and 'primary_damage_structure.dat' file.
 
+## Extended version of PRDgen: PRDgenEX
+- We also present the extended version of Machine A. Here, inter-defect correlation is adopted. Note that this is a preliminary version to improve the current PRDgen.
+- The method to use PRDgenEX is same with the current PRDgen. Only different thing is that you need to use the files on the "PRDgenEX" for Machine A (i.e. you can use same MachineB.py and PRDgen.py)
 
 # Required files to run PRDgen
 All necessary files are shared by Google Drive : https://drive.google.com/drive/folders/14lEF71SVgWBGjOkYrd1lxf828RhxAkVv?usp=sharing
